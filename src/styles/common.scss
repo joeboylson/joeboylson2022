@@ -1,0 +1,241 @@
+@font-face {
+    font-family: 'Migra';
+    src: url('font/Migra-Extralight.eot');
+    src: url('font/Migra-Extralight.eot?#iefix') format('embedded-opentype'),
+        url('font/Migra-Extralight.woff2') format('woff2'),
+        url('font/Migra-Extralight.woff') format('woff'),
+        url('font/Migra-Extralight.ttf') format('truetype'),
+        url('font/Migra-Extralight.svg#Migra-Extralight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Migra';
+    src: url('font/Migra-Extrabold.eot');
+    src: url('font/Migra-Extrabold.eot?#iefix') format('embedded-opentype'),
+        url('font/Migra-Extrabold.woff2') format('woff2'),
+        url('font/Migra-Extrabold.woff') format('woff'),
+        url('font/Migra-Extrabold.ttf') format('truetype'),
+        url('font/Migra-Extrabold.svg#Migra-Extrabold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+// --------------------------------------------------------------------------------
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+// @mixin content($background, $background-accent, $foreground,$foreground-accent ) {
+//     background: $background: #014afe;
+//     background-accent: $background-accent: #2C2C2C;
+//     foreground: $foreground: ghostwhite;
+//     foreground-accent: $foreground-accent: #e9e7f0;
+// }
+
+$size-tablet: 850px;
+$size-mobile: 650px;
+
+$nav-width: 130px;
+$nav-width-value: strip-unit(130px);
+$border-width: 1px;
+$border-width-value: strip-unit($border-width);
+
+$background: ghostwhite;
+$background-accent: #e9e7f0;
+$foreground: #2C2C2C;
+$foreground-accent: #014afe;
+
+$secondary-background: #014afe;
+$secondary-background-accent: #2C2C2C;
+$secondary-foreground: ghostwhite;
+$secondary-foreground-accent: #e9e7f0;
+
+:export {
+    navWidth: $nav-width;
+    navWidthValue: $nav-width-value;
+    borderWidth: $border-width;
+    borderWidthValue: $border-width-value;
+    background: $background;
+    foreground: $foreground;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: $foreground;
+    overscroll-behavior: none;
+    text-decoration: none;
+
+    // default font style
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    line-height: 26px;
+    color: $foreground;
+    font-weight: 200;
+
+    cursor: crosshair !important;
+
+    &::selection {
+        background-color: $foreground-accent;
+        color: #ffeb7b;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: $background;
+}
+
+h1 {
+    font-family: Migra;
+    font-size: 233px;
+    line-height: 240px; /* 10px */
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+h2 {
+    font-family: Migra;
+    font-size: 144px;
+    line-height: 150px; /* 8px */
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+h3, h3 b {
+    font-family: Migra;
+    font-size: 89px;
+    line-height: 94px; /* 6px */
+    letter-spacing: 1px;
+    font-weight: 200;
+}
+
+h3 b, p b { font-weight: 800; }
+p, a, span { display: block }
+a { color: $foreground-accent; }
+img { width: 100%; }
+
+.outline {
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.001);
+    -webkit-text-stroke-width: $border-width;
+    -webkit-text-stroke-color: $foreground;
+}
+
+.column-2 {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    * {
+        flex: 0 0 50%;
+        flex-wrap: wrap;
+    }
+
+    &.skewright {
+
+        * {
+            &:first-child {
+                flex: 0 0 100% * 0.618
+            }
+
+            &:last-child {
+                flex: 0 0 100% - (100% * 0.618)
+            }
+        }
+
+    }
+
+    &.skewleft {
+
+        * {
+            &:first-child {
+                flex: 0 0 100% - (100% * 0.618)
+            }
+            
+            &:last-child {
+                flex: 0 0 100% * 0.618
+            }
+        }
+
+    }
+
+    &.rtl {
+        flex-direction: row-reverse;
+    }
+
+}
+
+.image-wrapper {
+
+    width: fit-content;
+
+    .gatsby-image-wrapper {
+        height: inherit;
+        float: right;
+
+        * {
+            display: block;
+            float: right
+        }
+        
+        picture {
+            width: 100%;
+            
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.emph {
+    font-family: Migra;
+    display: inline;
+}
+
+
+@media screen and (max-width: $size-tablet) {
+
+    * {
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+    h1 {
+        font-size: 144px;
+        line-height: 150px; /* 8px */
+        letter-spacing: 2px;
+    }
+    
+    h2 {
+        font-size: 89px;
+        line-height: 94px; /* 6px */
+        letter-spacing: 1px;
+    }
+    
+    h3, h3 b {
+        font-size: 55px;
+        line-height: 59px; /* 4px */
+        letter-spacing: 0px;
+    }
+
+    .column-2 > * {
+        flex: 0 0 100% !important;
+    }
+
+}
+

@@ -1,0 +1,90 @@
+[
+    { 
+        "name": "Breathe Magazine", 
+        "medium": "Gatsby.js, Sanity CMS, Stripe Checkout",
+        "description": "A new site for Breath Magazine that will feature a collection of creators in each new edition and host a web store for Breath Magazine clothing and merchandise.",
+        "image": "./images/geometry.jpg",
+        "links": [
+            {
+                "text": "Site coming soon!", 
+                "url": ""
+            }
+        ]
+    },
+    { 
+        "name": "Matt Boylson – Portfolio", 
+        "medium": "React.js",
+        "description": "A portfolio site for Matt Boylson to display his professional and personal work.",
+        "image": "./images/geometry.jpg",
+        "links": [
+            {
+                "text": "Visit Matt's Site", 
+                "url": "https://mattboylson.com"
+            },
+            {
+                "text": "View Github Repository",
+                "url": "https://github.com/joeboylson/mb-portfolio"
+            }
+        ]
+    },
+    {
+        "name": "Borderly", 
+        "medium": "React.js, Python",
+        "description": "A web application that accepts a image and return the same image with a 5% white border. I use this for my personal Instagram account to provide uniform borders for all my photos.",
+        "image": "./images/geometry.jpg",
+        "links": [
+            {
+                "text": "Visit Borderly", 
+                "url": "https://boderly.herokuapp.com/"
+            },
+            {
+                "text": "View Github Repository",
+                "url": "https://github.com/joeboylson/borderly"
+            }
+        ]
+    },
+    {
+        "name": "Quad Four", 
+        "medium": "Java (Spring Boot), CSS",
+        "description": "A school (University of Cincinnati) project that takes Stephen Covey's \"Four Quadrant\" system to prioritize tasks. ",
+        "image": "./images/geometry.jpg",
+        "links": [
+            {
+                "text": "Visit Quad Four", 
+                "url": "https://quadfour.herokuapp.com/"
+            },
+            {
+                "text": "View Github Repository",
+                "url": "https://github.com/joeboylson/quadfour"
+            }
+        ]
+    },
+    {
+        "name": "Personal Portfolio - V1", 
+        "medium": "React.js",
+        "description": "A previous version of my personal portfolio.",
+        "image": "./images/geometry.jpg",
+        "links": [
+            {
+                "text": "Visit Portfolio V1", 
+                "url": "http://joeboylson.us/"
+            },
+            {
+                "text": "View Github Repository",
+                "url": "https://github.com/joeboylson/joeboylson.github.io/tree/V1"
+            }
+        ]
+    },
+    {
+        "name": "Web App Template", 
+        "medium": "Heroku, Python, React",
+        "description": "A website template that comes pre-configured with a Flask (Python) backend, React.js front-end, and configuration to host on Heroku",
+        "image": "./images/geometry.jpg",
+        "links": [
+            {
+                "text": "View Github Repository", 
+                "url": "https://github.com/joeboylson/heroku-python-react"
+            }
+        ]
+    }
+]

@@ -1,0 +1,172 @@
+@import './common.scss';
+
+// --------------------------------------------------
+// Nav.jsx
+// --------------------------------------------------
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 13px;
+    width: $nav-width - 1px;
+    height: calc(100vh - 2px - 13px);
+    display: flex;
+    background-color: $background;
+    z-index: +1;
+
+    border-bottom: $border-width solid $foreground;
+    border-right: $border-width solid $foreground;
+    border-top: $border-width solid $foreground;
+
+    a {
+        font-family: Migra;
+        font-weight: 800;
+        line-height: $nav-width / 4;
+        text-align: right;
+        writing-mode: tb-rl;
+        transform: rotate(-180deg);
+
+        &:hover {
+            &:after {
+                content: '*'
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: $size-tablet) {
+    nav {
+        display: none;;
+    }
+}
+
+
+
+// --------------------------------------------------
+// Page.jsx
+// --------------------------------------------------
+
+.page {
+    margin-left: $nav-width;
+    border-bottom: $border-width solid $foreground;
+    padding: 55px 13px;
+}
+
+@media screen and (max-width: $size-tablet) {
+    .page {
+        margin-left: 0;
+    }
+}
+
+
+// --------------------------------------------------
+// ScrollMarquee.jsx
+// --------------------------------------------------
+
+.scroll-marquee {
+
+    position: relative;
+    overflow-x: hidden;
+
+    border-bottom: 1px solid $foreground;
+    margin-bottom: 13px;
+
+    p {
+        width: max-content;
+        transform: translateX( calc(-50% - 0px));
+
+        color: $foreground-accent;
+
+        font-family: Migra;
+        font-weight: 800;
+        line-height: $nav-width / 4;
+    }
+}
+
+
+
+// --------------------------------------------------
+// DescriptionItem.jsx
+// --------------------------------------------------
+
+.description-item {
+
+    border-top: $border-width solid $foreground;
+    border-left: $border-width solid $foreground;
+    border-right: $border-width solid $foreground;
+    
+    .description-item-inner {
+        width: 100%;
+    
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .description-item-title {
+        text-align: center;
+        display: grid;
+        place-items: center;
+
+        $_w: 100% - (100% * 0.618);
+
+        flex: 0 0 calc( #{$_w} - 1px );
+        border-right: $border-width solid $foreground;
+
+    }
+    
+    .description-item-body {
+        text-align: center;
+        flex: 0 0 100% * 0.618;
+    }
+
+
+}
+
+
+
+// --------------------------------------------------
+// Carousel.jsx
+// -------------------------------------------------
+
+.carousel {
+
+    position: relative;
+    
+    .carousel-body {
+        margin: 13px 0;
+        padding: 13px 0;
+        border-top: $border-width solid $foreground;
+        border-bottom: $border-width solid $foreground;
+
+        & > * { margin: auto; }
+    }
+
+    .controls {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: 100px;
+        height: 16px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: $background-accent;
+
+        button {
+            outline: none;
+            border: none;
+            background-color: transparent;
+        }
+
+        * {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+
+}

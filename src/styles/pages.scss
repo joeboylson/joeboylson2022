@@ -1,0 +1,110 @@
+@import './common.scss';
+
+// --------------------------------------------------
+// IndexPage.jsx
+// --------------------------------------------------
+
+#index {
+
+    h1 { 
+        margin: 55px 0;
+    }
+
+    .bio {
+
+        margin: 34px 0 34px 0;
+
+        section {
+            margin: 13px 0 13px 0;
+
+            b {
+                font-family: Migra;
+                font-weight: 800;  
+                text-transform: uppercase;
+            }
+
+            p {
+
+                margin-bottom: 13px;
+
+                a { display: inline; }
+            }
+        }
+    }
+}
+
+// --------------------------------------------------
+// ProjectsPage.jsx
+// --------------------------------------------------
+
+#projects {
+
+    .project-list-header p {
+        font-weight: 800;
+    }
+
+    .project-list, .project-list-header {
+        display: flex;
+        flex-wrap: wrap;
+
+        .project-item {
+            display: flex;
+            flex: 0 0 100%;
+            flex-wrap: wrap;
+
+            .project-item-header {
+                flex: 0 0 100%;
+
+                display: flex;
+                flex: 0 0 100%;
+                flex-wrap: wrap;
+
+                height: 26px;
+                overflow: hidden;
+
+                &:hover {
+                    background-color: $background-accent;
+                }
+            }
+            
+            &.expanded {
+                background-color: $background-accent;
+                margin-bottom: 34px;
+            }
+
+            .project-item-body {
+                width: 100%;
+
+                .project-information {
+                    border-bottom: $border-width solid $foreground;
+                }
+            }
+        }
+
+        .name { flex: 0 0 80%; }
+        .index, .expand-button { flex: 0 0 10%; }
+
+    }
+}
+
+@media screen and (max-width: $size-tablet) {
+    .project-item-header {
+        background-color: $background !important;
+    }
+}
+
+// --------------------------------------------------
+// GalleryPage.jsx
+// --------------------------------------------------
+
+.gallery-item {
+    width: fit-content;
+    
+    &.expanded, &:hover {
+        background-color: $background-accent;
+    }
+}
+
+// --------------------------------------------------
+// ContactPage.jsx
+// --------------------------------------------------
