@@ -2,7 +2,7 @@ const Cursor = {
     element: null,
     timeout: null,
     init: function() {
-        if (!this.element) {
+        if (!this.element && !typeof window === "undefined") {
             let cursorSpan = document.createElement('span')
             cursorSpan.id = 'cursor-span';
             document.body.prepend(cursorSpan);
